@@ -1,8 +1,9 @@
 import unittest
-from unittest.mock import patch, AsyncMock, MagicMock
+from unittest.mock import MagicMock, patch
+
 from django.conf import settings
+
 from src.nats_consumer.management.commands.nats_consumer import Command
-import asyncio
 
 
 class TestReloadFunctionality(unittest.TestCase):

@@ -1080,7 +1080,7 @@ zstd = ["zstandard (>=0.18.0)"]
 name = "uvloop"
 version = "0.21.0"
 description = "Fast implementation of asyncio event loop on top of libuv"
-optional = true
+optional = false
 python-versions = ">=3.8.0"
 files = [
     {file = "uvloop-0.21.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:ec7e6b09a6fdded42403182ab6b832b71f4edaf7f37a9a0e371a01db5f0cb45f"},
@@ -1256,4 +1256,4 @@ uvloop = ["uvloop"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9"
-content-hash = "8705a962c7380b952638ed517fb223c06ae0ff10a1b1128345c882f0d2afcc08"
+content-hash = "cddc5a2f9a66b7c61d0db80eda48d280255a4992bbbe6d4620b95588cc518901"

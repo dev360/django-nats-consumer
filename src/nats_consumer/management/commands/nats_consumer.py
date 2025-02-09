@@ -1,11 +1,14 @@
 import asyncio
+import importlib
 import logging
 import logging.config
 import os
 import sys
 import threading
-from django.core.management.base import BaseCommand
+
 from django.conf import settings
+from django.core.management.base import BaseCommand
+
 from nats_consumer.consumer import NatsConsumer
 from nats_consumer.settings import config
 
@@ -20,11 +23,15 @@ def set_event_loop_policy():
 
     if event_loop_policy_str:
         try:
-            # Dynamically evaluate the event loop policy string
-            event_loop_policy = eval(event_loop_policy_str)
+            # Split the module and class name
+            module_name, class_name = event_loop_policy_str.rsplit(".", 1)
+            # Dynamically import the module
+            module = importlib.import_module(module_name)
+            # Get the class from the module
+            event_loop_policy = getattr(module, class_name)()
             asyncio.set_event_loop_policy(event_loop_policy)
             logger.info(f"Using {event_loop_policy_str} as the event loop policy.")
-        except (ImportError, NameError, SyntaxError) as e:
+        except (ImportError, AttributeError) as e:
             logger.error(f"Failed to set event loop policy: {e}")
             raise
 
