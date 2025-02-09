@@ -2,7 +2,9 @@ from typing import Any, Dict
 
 from django.conf import settings
 
-CONFIG_DEFAULTS = {}
+CONFIG_DEFAULTS = {
+    "event_loop_policy": None,
+}
 
 
 def get_config(settings_name=None):

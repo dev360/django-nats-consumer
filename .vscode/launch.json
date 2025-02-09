@@ -19,7 +19,8 @@
             "program": "${workspaceFolder}/src/example/manage.py",
             "args": [
                 "nats_consumer",
-                "--setup"
+                "--setup",
+                "--reload"
             ]
         },
         {
