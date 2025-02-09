@@ -17,6 +17,7 @@ pip install django-nats-consumer
 INSTALLED_APPS = [
     ...
     "nats_consumer",
+    ...
 ]
 
 NATS_CONSUMER = {
@@ -127,4 +128,3 @@ NATS_CONSUMER = {
     ...
 }
 ```
-

@@ -1,5 +1,6 @@
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
+
 from nats_consumer.management.commands.nats_consumer import set_event_loop_policy
 from nats_consumer.settings import config
 
