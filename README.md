@@ -5,9 +5,6 @@ NATS + Django = ⚡️
 
 Please pay attention to the development status; this is Pre-Alpha software; expect the api to evolve as I start using this more in production.
 
-I hope you find some value in it - writing a good consumer takes some finesse.
-
-
 ```bash
 pip install django-nats-consumer
 ```
@@ -104,9 +101,29 @@ python manage.py nats_consumer OrderConsumer AnotherConsumer
 python manage.py nats_consumer
 ```
 
-## Feature roadmap
-- Encoding/decoding of messages (json, protobuf, etc)
-- Better error handling, configurable retry
-- Better log output from the consumer
-- Configurable DLQ strategies
-- [insert your feature here]
+**Additional Options:**
+```bash
+# Enable uvloop for better performance
+python manage.py nats_consumer --uvloop
+
+# Enable auto-reload for development (watches for file changes)
+python manage.py nats_consumer --reload
+
+# Combine options
+python manage.py nats_consumer OrderConsumer --uvloop --reload
+```
+
+**Note**
+When running your code in production, uvloop typically provides better performance than the default asyncio event loop, but it's only available on Unix-like systems (Linux, macOS). To use uvloop, please install using:
+
+```bash
+pip install django-nats-consumer[uvloop]
+```
+
+And add the following to your settings.py:
+```python
+NATS_CONSUMER = {
+    "event_loop_policy": "uvloop.EventLoopPolicy",
+    ...
+}
+```
