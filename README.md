@@ -104,14 +104,8 @@ python manage.py nats_consumer
 
 **Additional Options:**
 ```bash
-# Enable uvloop for better performance
-python manage.py nats_consumer --uvloop
-
 # Enable auto-reload for development (watches for file changes)
 python manage.py nats_consumer --reload
-
-# Combine options
-python manage.py nats_consumer OrderConsumer --uvloop --reload
 ```
 
 **Note**
