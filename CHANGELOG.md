@@ -1,4 +1,9 @@
 
+## 1.3.0 (2025-02-09)
+
+- feat: version bump ([`ff6e122`](https://github.com/dev360/django-nats-consumer/commit/ff6e122c8c722df4c6258a42fcda212b1fb7d07c))
+- docs: Adds documentation for the reload and event loop policy setting (#11) ([`e69d7e9`](https://github.com/dev360/django-nats-consumer/commit/e69d7e9f74fd1143fa70ce598f2b616b206ffe2d))
+
 ## 1.2.1 (2025-01-28)
 
 - fix(consumer): durable_name is set to &#34;default&#34; unless set in settings, or specified on the consumer itself. ([`6bff3f6`](https://github.com/dev360/django-nats-consumer/commit/6bff3f6d1c4f7785e14697c4fb4694d2043e9734))
